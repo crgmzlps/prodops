@@ -38,7 +38,7 @@ jobs:
         #  - run: your-database-migration-command
 
 workflows:
-  payments-workflow:
+  prodops-workflow:
     jobs:
       - ci_cd:
           context: sonarcloud
