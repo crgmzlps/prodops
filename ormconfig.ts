@@ -14,6 +14,12 @@ const config: TypeOrmModuleOptions = {
   cli: {
     migrationsDir: 'src/db/migrations',
   },
+  extra: {
+    ssl:
+      process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false,
+  },
 };
 
 export default config;

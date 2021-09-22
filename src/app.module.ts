@@ -19,6 +19,12 @@ import { UserModule } from './user/user.module';
       synchronize: process.env.NODE_ENV !== 'production',
       logging: true,
       entities: ['dist/src/**/*.entity.js'],
+      extra: {
+        ssl:
+          process.env.NODE_ENV === 'production'
+            ? { rejectUnauthorized: false }
+            : false,
+      },
     }),
     UserModule,
     ProjectModule,
