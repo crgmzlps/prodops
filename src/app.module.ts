@@ -12,14 +12,9 @@ import { UserModule } from './user/user.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
-      // host: process.env.DATABASE_HOST,
-      // port: parseInt(process.env.DATABASE_PORT, 10),
-      // database: process.env.DATABASE_NAME,
-      // username: process.env.DATABASE_USERNAME,
-      // password: process.env.DATABASE_PASSWORD,
       synchronize: process.env.NODE_ENV !== 'production',
       logging: true,
-      entities: ['dist/src/**/*.entity.js'],
+      entities: ['dist/**/*.entity.js'],
       extra: {
         ssl:
           process.env.NODE_ENV === 'production'
